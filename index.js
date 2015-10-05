@@ -19,12 +19,12 @@ function parse(string, returnUnit) {
 
   var groups = string
     .toLowerCase()
-    .replace(/[^\.\w+-]+/g, '')
-    .match(/[-+]?[0-9]+[a-z]+/g);
+    .match(/[-+]?[0-9\.]+[a-z]+/g);
+
 
   if (groups !== null) {
     groups.forEach(function (g) {
-      var value = g.match(/[0-9]+/g)[0];
+      var value = g.match(/[0-9\.]+/g)[0];
       var unit = g.match(/[a-z]+/g)[0];
 
       totalMicroseconds += getMicroseconds(value, unit);
