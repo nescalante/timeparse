@@ -23,4 +23,8 @@ describe('timeparse', function() {
     assert.equal(tp('1w', 'ms'), 604800000);
     assert.equal(tp('2m2s', 's'), 122);
   });
+
+  it('should handle decimals', function() {
+    assert.equal(tp('46.300ms', 'μs'), 46300);
+  });
 });
