@@ -14,7 +14,8 @@ npm install timeparse
 
 ```js
 var timeparse = require('timeparse');
-var result = timeparse('2m2s'); // 122000 (2 minutes and 2 seconds in miliseconds)
+var result = timeparse('2m2s'); // 122000 (2 minutes and 2 seconds in milliseconds)
+var result2 = timeparse('3m43s', 's') //223 (3 minutes, 43 seconds in seconds)
 ```
 
 ## Units
@@ -24,6 +25,8 @@ var result = timeparse('2m2s'); // 122000 (2 minutes and 2 seconds in milisecond
 - **h**: hours
 - **m**: minutes
 - **s**: seconds
+- **ms**: milliseconds
+- **μs**: microseconds
 
 ## License
 

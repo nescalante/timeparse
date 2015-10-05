@@ -1,17 +1,21 @@
 'use strict';
 
 var units = {
-  s: 1,
-  m: 60,
-  h: 60 * 60,
-  d: 60 * 60 * 24,
-  w: 60 * 60 * 24 * 7
+  μs : 1,
+  ms : 1000,
+  s  : 1000 * 1000,
+  m  : 1000 * 1000 * 60,
+  h  : 1000 * 1000 * 60 * 60,
+  d  : 1000 * 1000 * 60 * 60 * 24,
+  w  : 1000 * 1000 * 60 * 60 * 24 * 7
 };
 
 module.exports = parse;
 
 function parse(string, returnUnit) {
-  var totalSeconds = 0;
+  returnUnit = returnUnit || 'ms';
+
+  var totalMicroseconds = 0;
 
   var groups = string
     .toLowerCase()
@@ -23,14 +27,14 @@ function parse(string, returnUnit) {
       var value = g.match(/[0-9]+/g)[0];
       var unit = g.match(/[a-z]+/g)[0];
 
-      totalSeconds += getSeconds(value, unit);
+      totalMicroseconds += getMicroseconds(value, unit);
     });
   }
 
-  return totalSeconds * 1000;
+  return totalMicroseconds / units[returnUnit];
 }
 
-function getSeconds(value, unit) {
+function getMicroseconds(value, unit) {
   var result = units[unit];
 
   if (result) {
