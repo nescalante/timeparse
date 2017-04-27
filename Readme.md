@@ -1,4 +1,4 @@
-# Time Parse
+# Time Parse [![Greenkeeper badge](https://badges.greenkeeper.io/nescalante/timeparse.svg)](https://greenkeeper.io/)
 
 > Time parse utility
 
