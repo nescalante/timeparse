@@ -4,7 +4,7 @@
   "description": "Time parse utility",
   "main": "index.js",
   "scripts": {
-    "test": "jshint . --reporter node_modules/jshint-stylish/stylish.js && mocha"
+    "test": "jshint . && mocha"
   },
   "repository": {
     "type": "git",
@@ -23,8 +23,7 @@
   },
   "homepage": "https://github.com/nescalante/timeparse",
   "devDependencies": {
-    "jshint": "~2.9.4",
-    "jshint-stylish": "~2.2.1",
-    "mocha": "~3.2.0"
+    "jshint": "^2.9.4",
+    "mocha": "^3.2.0"
   }
 }
